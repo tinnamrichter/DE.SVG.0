@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SVG</title>
+</head>
+<body>
+    <style>
+    #svg {
+        border: 1px solid ;
+        height: 200px;
+        width: 400px;
+        background-color: black;
+    }
+
+    #image0 ellipse {
+        fill: transparent;
+        stroke-width: 2px;
+    }
+    </style>
+    <div>
+        <svg id='svg'><use href='#image0'/></svg>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id='image0' viewbox='0 0 400 200'>
+            <ellipse cx="200" cy="100" rx='190' ry="90" stroke="blue" stroke-width="1" fill="transparent"/>
+            <circle cx='200' cy='100' r='10' fill='yellow'/>
+        </symbol>
+    </svg>
+
+    <div><pre>
+            1. What is a viewbox?
+                Værdien af viewbox attributtet er en liste af fire tal, min-x, min-y, bredde, og højde, 
+                adskilt af mellemrum eller komma, hvilket specifiserer en rektangel i bruger området hvilket er kortlagt til viewportets 
+                størrelsesforhold der bliver etableret for det associerede SVG element.
+
+            2. What is a viewport?
+                Viewport er det synlige område af SVG billedet. Et SVG billede kan logisk være lige den størrelse du ønsker, 
+                men kun en vids del af billedet kan være synlig ad gangen.
+                Det synlige område er the viewport.
+
+            3. How do they relate to each other?
+                Når du anvender viewbox attributtet, skal man huske at sætte viewport dimensionerne også, for ellers vil deres default størrelse altid være 100%.
+                Og der er en stor sandsynlighed for at man ender med at alt for stort billede/grafik.
+
+
+            4. How to scale an SVG drawing's appearance on a web page?
+                Ved at angive viewboxen og viewportens størrelse , kan du styre skaleringen af SVG'en ved at angive den ønskede størrelse på x og y cordinaterne.
+
+
+        </pre></div>
+</body>
+</html>
